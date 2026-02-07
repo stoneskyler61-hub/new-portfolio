@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#000319">
+    <meta name="description" content="Cherish Kumar Satpathy - Full Stack Developer Portfolio">
     <title>Cherish Kumar Satpathy | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -36,15 +43,15 @@
                         <span class="glitch-text" data-text="CHERISH">CHERISH</span><br>
                         <span class="glitch-text" data-text="KUMAR SATPATHY">KUMAR SATPATHY</span>
                     </h1>
-                    <p class="hero-desc">I craft <span class="text-purple">immersive</span> digital experiences by blending aesthetic design with complex engineering.</p>
+                    <p class="hero-desc">I craft <span class="text-purple">immersive</span> digital experiences.</p>
                     <div class="btn-group-hero">
                         <a href="#work" class="magic-btn-container magnetic" data-strength="50">
                             <span class="magic-btn-border"></span>
                             <span class="magic-btn-content">
-                                Explore Projects <i class="fas fa-arrow-right icon-move"></i>
+                                Projects <i class="fas fa-arrow-right icon-move"></i>
                             </span>
                         </a>
-                        <a href="mailto:satpathycherishkumar@gmail.com" class="hire-btn-liquid magnetic" data-strength="30">
+                        <a href="#contact" class="hire-btn-liquid magnetic" data-strength="30">
                             <span>Hire Me</span>
                             <div class="liquid"></div>
                         </a>
@@ -53,9 +60,8 @@
                 
                 <div class="hero-visual">
                     <div class="rotating-bar"></div>
-                    
                     <div class="img-content">
-                        <img src="AdobeExpress.png" alt="Cherish" class="my-photo">
+                        <img src="/assets/AdobeExpress.png" alt="Cherish" class="my-photo" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -67,7 +73,6 @@
             </div>
             
             <div class="bento-grid-complex">
-                
                 <div class="bento-card bio-card tilt-card">
                     <div class="card-glass"></div>
                     <div class="holographic-overlay"></div>
@@ -88,7 +93,6 @@
                     <div class="card-content">
                         <div class="globe-wrapper">
                             <i class="fas fa-globe-asia floating-icon animated-icon-pulse"></i>
-                            <div class="pin-wave"></div>
                         </div>
                         <h3>India</h3>
                         <p class="text-sm">Bhubaneswar</p>
@@ -176,18 +180,16 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <section id="work" class="work-section">
-            <div class="section-header">
-                <h2 class="section-title">Selected <span class="text-purple">Works</span></h2>
-            </div>
-
             <div class="project-stack-container">
-                
-                <div class="project-card-stack sticky-card" style="--index: 1;">
+                <div class="section-header">
+                    <h2 class="section-title">Selected <span class="text-purple">Works</span></h2>
+                </div>
+
+                <div class="project-card-stack" style="--index: 1;">
                     <div class="card-inner">
                         <div class="project-info">
                             <span class="p-id">01</span>
@@ -198,7 +200,6 @@
                                 <span class="brand-node"><i class="fab fa-css3-alt"></i> CSS</span>
                                 <span class="brand-js"><i class="fab fa-js"></i> JS</span>
                                 <span class="brand-node"><i class="fab fa-node-js"></i> Node.js</span>
-                                <span class="brand-aws"><i class="fas fa-satellite"></i> Postman</span>
                             </div>
                             <div class="btn-group">
                                 <a href="#" class="draw-btn small">
@@ -212,12 +213,12 @@
                             </div>
                         </div>
                         <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070" alt="CityGuardian">
+                            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070" alt="CityGuardian" loading="lazy">
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-stack sticky-card" style="--index: 2;">
+                <div class="project-card-stack" style="--index: 2;">
                     <div class="card-inner">
                         <div class="project-info">
                             <span class="p-id">02</span>
@@ -240,12 +241,12 @@
                             </div>
                         </div>
                         <div class="project-img">
-                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnk4N3NjejA3aW5nM3J0d2d2M3FmcXRvY3E2bGdjaHd2b2hxM2Q1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" alt="Portfolio V2">
+                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnk4N3NjejA3aW5nM3J0d2d2M3FmcXRvY3E2bGdjaHd2b2hxM2Q1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" alt="Portfolio V2" loading="lazy">
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-stack sticky-card" style="--index: 3;">
+                <div class="project-card-stack" style="--index: 3;">
                     <div class="card-inner">
                         <div class="project-info">
                             <span class="p-id">03</span>
@@ -268,12 +269,12 @@
                             </div>
                         </div>
                         <div class="project-img">
-                            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnZyaWI3a25lY3I3amNjYTd6cmxsazBjMWk5M3E1OXdtdGxidDhzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Hexafy">
+                            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnZyaWI3a25lY3I3amNjYTd6cmxsazBjMWk5M3E1OXdtdGxidDhzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Hexafy" loading="lazy">
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-stack sticky-card" style="--index: 4;">
+                <div class="project-card-stack" style="--index: 4;">
                     <div class="card-inner">
                         <div class="project-info">
                             <span class="p-id">04</span>
@@ -296,12 +297,12 @@
                             </div>
                         </div>
                         <div class="project-img">
-                            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWxxYWIzN3F2dzI4cXlmaWY0bDhneGx4NXV1OWRtcjRhMmdjZWloMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yAGIvCiwPJn5C/giphy.gif" alt="Object Detection">
+                            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWxxYWIzN3F2dzI4cXlmaWY0bDhneGx4NXV1OWRtcjRhMmdjZWloMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yAGIvCiwPJn5C/giphy.gif" alt="Object Detection" loading="lazy">
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-stack sticky-card" style="--index: 5;">
+                <div class="project-card-stack" style="--index: 5;">
                     <div class="card-inner">
                         <div class="project-info">
                             <span class="p-id">05</span>
@@ -324,32 +325,28 @@
                             </div>
                         </div>
                         <div class="project-img">
-                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnk4N3NjejA3aW5nM3J0d2d2M3FmcXRvY3E2bGdjaHd2b2hxM2Q1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" alt="Portfolio V1">
+                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnk4N3NjejA3aW5nM3J0d2d2M3FmcXRvY3E2bGdjaHd2b2hxM2Q1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" alt="Portfolio V1" loading="lazy">
                         </div>
                     </div>
                 </div>
-
-                <div class="hire-cta-container center-content">
+                
+                <div class="hire-cta-container center-content" style="position: relative; z-index: 50; margin-top: 30px;">
                     <a href="#contact" class="hire-btn-slide">
                         <span>Start a Project</span>
                         <div class="icon-box"><i class="fas fa-chevron-right"></i></div>
                     </a>
                 </div>
-
             </div>
         </section>
 
         <footer id="contact" class="footer-section">
             <div class="footer-container">
-                
                 <h2 class="footer-cta magnetic" data-strength="100">LET'S TALK</h2>
-                
                 <div class="contact-wrapper">
                     <div class="contact-visual">
                         <div class="visual-content">
                             <h2 class="visual-title">Let's <br><span class="text-purple">Create</span></h2>
                             <p class="visual-desc">Ready to turn your concept into a digital reality? The channel is open.</p>
-                            
                             <div class="social-orbit">
                                 <div class="orbit-center">
                                     <i class="fas fa-paper-plane"></i>
@@ -359,7 +356,6 @@
                                 <a href="https://www.instagram.com/cherishh.exe/" target="_blank" class="planet p3 brand-insta"><i class="fab fa-instagram"></i></a>
                                 <a href="https://discord.com" target="_blank" class="planet p4 brand-discord"><i class="fab fa-discord"></i></a>
                             </div>
-
                             <div class="contact-details">
                                 <div class="detail-item">
                                     <i class="fas fa-envelope"></i> satpathycherishkumar@gmail.com
@@ -376,45 +372,39 @@
                             <span class="status-indicator"></span>
                             <span id="typewriter-text"></span><span class="cursor-blink">|</span>
                         </div>
-
-                        <form id="contactForm" class="cyber-form">
+                        <form id="contactForm" class="cyber-form" action="https://formspree.io/f/meezpjjb" method="POST">
                             <div class="input-container">
-                                <input type="text" id="name" required autocomplete="off" placeholder=" ">
-                                <label for="name">Protocol Name</label>
+                                <input type="text" id="name" name="name" required autocomplete="off" placeholder=" ">
+                                <label for="name">Enter Your Name</label>
                                 <div class="glow-bar"></div>
                             </div>
-
                             <div class="input-container">
-                                <input type="email" id="email" required autocomplete="off" placeholder=" ">
-                                <label for="email">Signal Source (Email)</label>
+                                <input type="email" id="email" name="email" required autocomplete="off" placeholder=" ">
+                                <label for="email">Write Your Email Here</label>
                                 <div class="glow-bar"></div>
                             </div>
-
                             <div class="input-container">
-                                <textarea id="message" rows="3" required autocomplete="off" placeholder=" "></textarea>
-                                <label for="message">Transmission Data</label>
+                                <textarea id="message" name="message" rows="3" required autocomplete="off" placeholder=" "></textarea>
+                                <label for="message">Enter Your Message</label>
                                 <div class="glow-bar"></div>
                             </div>
-
                             <button type="submit" class="cyber-btn">
                                 <span class="btn-content">
-                                    ESTABLISH LINK <i class="fas fa-satellite-dish"></i>
+                                    SEND MESSAGE<i class="fas fa-satellite-dish"></i>
                                 </span>
                                 <span class="btn-glitch"></span>
                                 <span class="loading-ring"></span>
-                                <span class="success-msg"><i class="fas fa-check"></i> LINKED</span>
+                                <span class="success-msg"><i class="fas fa-check"></i> SENT</span>
                             </button>
                         </form>
                     </div>
                 </div>
-
                 <div class="copyright"><p>© 2026 Cherish Kumar Satpathy. All Systems Nominal.</p></div>
             </div>
         </footer>
 
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
-
