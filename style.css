@@ -8,7 +8,7 @@
     --font-display: 'Syncopate', sans-serif;
 }
 
-/* 1. RESET & BASICS (Fixed Cursor Issue) */
+/* 1. RESET & BASICS */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
@@ -16,12 +16,11 @@ body {
     color: var(--text-white); 
     font-family: var(--font-main); 
     overflow-x: hidden; 
-    overflow-y: auto; 
     perspective: 800px;
     cursor: default; 
 }
 
-/* Ensure interactive elements always show pointer */
+/* Interactive elements */
 a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn { 
     cursor: pointer !important; 
     transform: translateZ(0); 
@@ -29,7 +28,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 }
 
 /* 2. BACKGROUNDS */
-.fixed-bg-layer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+.fixed-bg-layer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; overflow: hidden; }
 .main-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); }
 .spotlight-effect { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 100vw; height: 100vh; background: radial-gradient(circle, rgba(118, 60, 172, 0.15) 0%, transparent 70%); filter: blur(100px); }
 #star-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.5; }
@@ -69,14 +68,13 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     flex-wrap: nowrap; 
 }
 
-/* TEXT AREA - High Z-Index to sit ON TOP of image overlap */
 .hero-text { 
     flex: 1; 
     min-width: 500px; 
-    z-index: 50; /* Super high priority for clicks */
-    position: relative; /* Needed for z-index */
+    z-index: 50; 
+    position: relative; 
     padding-left: 2%;
-    pointer-events: auto; /* Force clicks to work */
+    pointer-events: auto; 
 }
 
 .badge { border: 1px solid var(--glass-border); padding: 8px 16px; border-radius: 50px; display: inline-block; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 25px; background: rgba(203, 172, 249, 0.05); color: var(--purple); }
@@ -90,14 +88,13 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .hero-desc { font-size: 1.2rem; color: #C1C2D3; max-width: 500px; line-height: 1.6; margin-bottom: 40px; }
 .text-purple { color: var(--purple); }
 
-/* BUTTONS */
 .btn-group-hero { 
     display: flex; 
     gap: 20px; 
     align-items: center; 
     flex-wrap: wrap; 
     position: relative; 
-    z-index: 100; /* Ensure buttons are top-most */
+    z-index: 100; 
 }
 .magic-btn-container { position: relative; display: inline-flex; overflow: hidden; padding: 1px; border-radius: 12px; cursor: pointer; text-decoration: none; transition: 0.3s; z-index: 100; }
 .magic-btn-border { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 0%, transparent 80%, #CBACF9 100%); animation: spin 4s linear infinite; pointer-events: none; }
@@ -128,7 +125,6 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .draw-btn.small { padding: 8px 20px; font-size: 0.8rem; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* HERO VISUAL - FIX: POINTER-EVENTS: NONE */
 .hero-visual { 
     flex: 1; 
     height: 100%; 
@@ -138,11 +134,10 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     position: relative; 
     perspective: 1000px; 
     transform-style: preserve-3d;
-    pointer-events: none; /* KEY FIX: Allows clicks to pass through the image area */
+    pointer-events: none;
     z-index: 1;
 }
 
-/* ROTATING BLURRED BAR */
 .rotating-bar { 
     position: absolute; 
     top: 42%;
@@ -175,7 +170,6 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     align-items: center; 
 }
 
-/* PHOTO STYLE */
 .my-photo { 
     width: auto;
     height: 98vh; 
@@ -183,7 +177,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     object-fit: contain; 
     filter: drop-shadow(0 0 30px rgba(0,0,0,0.6)); 
     transform: translateY(-8%);
-    pointer-events: none; /* Double check: Image shouldn't capture clicks */
+    pointer-events: none; 
 }
 
 /* 5. BENTO GRID */
@@ -240,7 +234,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .project-info { flex: 1; transform: translateZ(30px); }
 .p-id { font-family: var(--font-display); color: var(--purple); font-size: 3rem; display: block; margin-bottom: 20px; opacity: 0.5; }
 .card-inner h3 { font-size: 2.5rem; margin-bottom: 15px; }
-.p-tags { margin-bottom: 30px; display: flex; gap: 15px; }
+.p-tags { margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap; }
 .p-tags span { font-weight: 600; font-size: 0.9rem; display: flex; gap: 5px; align-items: center; }
 .brand-react { color: #61DAFB; } .brand-node { color: #339933; } .brand-next { color: #fff; } .brand-mongo { color: #47A248; } .brand-shopify { color: #96bf48; }
 .brand-js { color: #F7DF1E; } .brand-aws { color: #FF9900; }
@@ -291,7 +285,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .glow-bar { position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--purple); box-shadow: 0 0 10px var(--purple); transition: 0.4s ease-out; }
 .input-container input:focus ~ .glow-bar, .input-container textarea:focus ~ .glow-bar { width: 100%; }
 
-/* Cyber Button - SLOWED DOWN ANIMATIONS */
+/* Cyber Button */
 .cyber-btn { 
     position: relative; 
     padding: 15px 30px; 
@@ -303,7 +297,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     letter-spacing: 2px; 
     cursor: pointer; 
     overflow: hidden; 
-    transition: 0.6s ease; /* SLOWER button transition */
+    transition: 0.6s ease; 
     margin-top: 20px; 
     display: flex; 
     justify-content: center; 
@@ -312,7 +306,6 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 }
 .cyber-btn:hover { background: var(--purple); color: #000; box-shadow: 0 0 30px rgba(203, 172, 249, 0.4); }
 
-/* Glitch Effect - SLOWER SWIPE */
 .btn-glitch { 
     position: absolute; 
     top: 0; 
@@ -320,7 +313,7 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
     width: 100%; 
     height: 100%; 
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); 
-    transition: 1.2s ease-in-out; /* SLOWER glitch swipe */
+    transition: 1.2s ease-in-out; 
     transform: skewX(-20deg); 
 }
 .cyber-btn:hover .btn-glitch { left: 200%; transition: 1.2s ease-in-out; }
@@ -335,34 +328,392 @@ a, button, .magnetic, .draw-btn, .submit-btn, .cyber-btn {
 .cyber-btn.success .success-msg { display: block; }
 .copyright { margin-top: 50px; color: #555; font-size: 0.9rem; text-align: center; }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .bento-grid-complex { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-    .bio-card, .stack-card, .heatmap-card, .music-card, .stats-card { grid-column: span 2; }
-}
-@media (max-width: 900px) {
-    /* HERO MOBILE */
-    .hero-container { flex-direction: column; justify-content: center; text-align: center; padding-top: 100px; height: auto; }
-    .hero-text { min-width: unset; margin-bottom: 20px; padding-left: 0; z-index: 50; }
-    .hero-visual { width: 100%; height: 50vh; pointer-events: none; }
-    .my-photo { height: 55vh; transform: translateY(0); pointer-events: none; }
-    .rotating-bar { top: 50%; width: 100%; pointer-events: none; }
+/* ========================================= */
+/* RESPONSIVE MEDIA QUERIES            */
+/* ========================================= */
 
-    /* BENTO & CONTACT MOBILE */
-    .contact-wrapper { grid-template-columns: 1fr; }
-    .contact-visual { padding: 40px 20px; text-align: center; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .social-orbit { margin: 30px auto; }
-    .contact-form-area { padding: 40px 20px; }
+/* Laptops & Small Desktops (Below 1200px) */
+@media (max-width: 1200px) {
+    .hero-title { font-size: 3rem; }
+    .hero-text { min-width: 450px; }
+    
+    .bento-grid-complex {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    .bio-card { grid-column: span 2; grid-row: auto; min-height: 250px; }
+    .stack-card { grid-column: span 2; grid-row: auto; }
+    .heatmap-card { grid-column: span 2; grid-row: auto; }
+    .location-card, .status-card { grid-column: span 1; grid-row: auto; }
+    .music-card, .stats-card { grid-column: span 1; grid-row: auto; }
 }
-@media (max-width: 600px) {
-    .bento-grid-complex { grid-template-columns: 1fr; }
-    .bio-card, .stack-card, .heatmap-card, .music-card, .stats-card, .location-card, .status-card { grid-column: span 1; }
-    .card-inner { flex-direction: column; padding: 30px; text-align: center; }
-    .project-img { width: 100%; height: 250px; }
-    .btn-group { justify-content: center; }
-    .glass-nav { width: 95%; padding: 15px 20px; }
-    .nav-link span { display: none; }
-    .project-card-stack { position: relative; top: 0; margin-bottom: 40px; }
-    .hire-btn-liquid { padding: 12px 25px; font-size: 0.9rem; }
-    .btn-group-hero { justify-content: center; flex-wrap: wrap; }
+
+/* Tablets (Below 992px) */
+@media (max-width: 992px) {
+    /* Explicitly remove AR/VR effects on tablets/mobile */
+    #about.ar-vr-element {
+        transform: none !important;
+        perspective: none !important;
+        will-change: auto !important;
+    }
+
+    /* Hero: Force Row Layout (Side by Side) */
+    .hero-container {
+        flex-direction: row; /* FORCE ROW */
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        height: auto;
+        min-height: auto; /* Remove minimum height constraint */
+        padding-top: 100px;
+        padding-bottom: 50px;
+        gap: 10px;
+    }
+
+    .hero-text {
+        width: 55%; /* Slightly larger text area */
+        min-width: unset;
+        padding: 0;
+    }
+
+    .hero-visual {
+        width: 45%; /* Smaller image area */
+        height: auto;
+        min-height: auto;
+        transform: none;
+        display: flex;
+        justify-content: flex-end; /* Align image right */
+    }
+
+    .hero-title {
+        font-size: clamp(1.2rem, 3.5vw, 2.5rem); /* Scaled down title */
+    }
+    
+    .hero-desc {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .my-photo {
+        height: auto;
+        width: 100%;
+        max-height: 50vh;
+        object-fit: contain;
+        transform: translateY(0);
+    }
+    
+    .rotating-bar {
+        width: 100%;
+        top: 50%;
+        height: 80px;
+    }
+
+    .btn-group-hero {
+        justify-content: flex-start; /* Align buttons left with text */
+    }
+
+    /* Projects */
+    .card-inner {
+        flex-direction: column;
+        padding: 40px;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .project-info {
+        order: 2;
+        width: 100%;
+    }
+
+    .project-img {
+        order: 1;
+        width: 100%;
+        height: 250px;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+    
+    .p-tags {
+        justify-content: center;
+    }
+
+    /* Contact: SWAP ORDER (Form First, Visual Second) */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .contact-form-area {
+        order: 1; /* Form First */
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-visual {
+        order: 2; /* Visual Info Second */
+        border-right: none;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+}
+
+/* Mobile Phones (Below 768px) */
+@media (max-width: 768px) {
+    /* Nav */
+    .glass-nav {
+        width: 95%;
+        padding: 10px 15px;
+        top: 15px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    /* Hero Height Fix */
+    .hero-section {
+        min-height: auto; /* Allow auto height */
+        padding-bottom: 30px;
+        height: auto; /* Force auto height */
+    }
+    .hero-container {
+        height: auto;
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 20px;
+    }
+
+    /* Bento Grid: Single Column */
+    .bento-grid-complex {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-card, .stack-card, .heatmap-card, .music-card, .stats-card, .location-card, .status-card {
+        grid-column: span 1 !important;
+        grid-row: auto;
+        min-height: auto;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-section {
+        padding: 40px 5%; /* Reduced padding */
+    }
+
+    /* Projects */
+    .work-section {
+        padding: 40px 5%; /* Reduced padding */
+    }
+    .card-inner {
+        padding: 25px;
+        border-radius: 20px;
+    }
+    .card-inner h3 {
+        font-size: 1.8rem;
+    }
+    .p-id {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .project-img {
+        height: 200px;
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer-section {
+        padding: 40px 5% 30px; /* Reduced padding */
+    }
+    .footer-cta {
+        font-size: 12vw;
+    }
+    .visual-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+    /* Navbar: Row Layout maintained, Logo Hidden to separate name */
+    .glass-nav {
+        flex-direction: row;
+        justify-content: center; /* Center links since logo is hidden */
+        gap: 15px;
+        padding: 12px;
+    }
+    
+    .logo {
+        display: none; /* Separating name from nav bar by removing it */
+    }
+
+    .nav-links {
+        width: auto;
+        justify-content: center;
+        gap: 15px;
+    }
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    /* Hero: STRICT SIDE-BY-SIDE LAYOUT & NO HEIGHT */
+    .hero-section {
+        min-height: unset; /* Remove min height completely */
+        height: auto;
+        padding-bottom: 0;
+    }
+    
+    .hero-container {
+        flex-direction: row !important; /* Force row */
+        height: auto;
+        min-height: unset;
+        padding-top: 80px; /* Space for nav */
+        padding-bottom: 10px; /* Minimal bottom padding to reduce gap */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-text {
+        width: 58%; /* Text takes slight priority */
+        padding-right: 5px;
+        margin-bottom: 0;
+    }
+    
+    .hero-visual {
+        width: 42%;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        justify-content: flex-end;
+        overflow: visible; /* Allow image to burst out visually */
+    }
+    
+    .hero-title {
+        font-size: clamp(1rem, 6vw, 1.4rem); /* Tiny but readable title */
+        margin-bottom: 10px;
+    }
+
+    .badge {
+        font-size: 0.6rem;
+        padding: 4px 8px;
+        margin-bottom: 10px;
+    }
+
+    .hero-desc {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    /* Buttons scaling */
+    .btn-group-hero {
+        flex-direction: column; /* Stack buttons to fit width */
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .magic-btn-content, .hire-btn-liquid {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+        width: 100%; /* Full width of text container */
+        justify-content: center;
+    }
+    
+    .magic-btn-container, .hire-btn-liquid {
+        width: 100%;
+    }
+
+    .my-photo {
+        width: 100%;
+        height: auto;
+        max-height: none; /* Remove height caps */
+        /* CHANGED: Removed negative translateX and added positive translateX to move right */
+        transform: scale(1.6) translateX(20px); 
+        transform-origin: center right;
+        /* CHANGED: Reset margin-right */
+        margin-right: 0;
+    }
+
+    /* Projects */
+    .project-card-stack {
+        top: 80px; 
+    }
+
+    .project-img {
+        height: 160px;
+    }
+
+    .p-tags span {
+        font-size: 0.7rem;
+    }
+
+    /* Contact */
+    .contact-form-area {
+        padding: 30px 20px;
+    }
+
+    .contact-visual {
+        padding: 30px 20px;
+    }
+
+    .social-orbit {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .orbit-center {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* TIGHTER VERTICAL SPACING FOR SMALL MOBILE */
+    .about-section, .work-section, .footer-section {
+        padding: 30px 15px; /* Significantly reduced vertical padding */
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px; /* Reduced margin */
+    }
+    
+    .bento-grid-complex {
+        gap: 15px; /* Reduced gap between cards */
+    }
+    
+    .bento-card {
+        padding: 20px; /* Compact internal padding */
+    }
+    
+    .card-inner {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .project-img {
+        height: 140px; /* Smaller image height */
+    }
+    
+    .p-id {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    
+    .card-inner h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    .footer-cta {
+        margin-bottom: 30px;
+    }
+    
+    .contact-wrapper {
+        border-radius: 15px;
+    }
+    
+    .contact-visual, .contact-form-area {
+        padding: 25px 15px;
+    }
 }
